@@ -3,6 +3,13 @@
 ;;;
 
 
+;;; tab 4 spaces, uses spaces for indentation
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+;;;(setq indent-line-function 'insert-tab)
+(setq tab-stop-list (number-sequence 2 400 2))
+(setq indent-line-function (quote insert-tab))
+
 ;;; In c-mode, allow tab key to indent (vs format)
 ;;; No emacs splash screen on startup
 (setq c-tab-always-indent nil
