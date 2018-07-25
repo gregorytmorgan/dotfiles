@@ -9,14 +9,14 @@
       inhibit-splash-screen t)
 
 ;;; Set load path
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/editor-modes")
 
 ;;; Load php-mode on startup
-;;;(load "php-mode")
+(load "php-mode")
 ;;; don't load php-mode on startup, rather load based on file extension when loading a file
-(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
-(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+;;;(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+;;;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+;;;(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 
 ;;; Don't create backup files (~)
 (setq make-backup-files nil)
