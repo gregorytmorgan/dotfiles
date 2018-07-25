@@ -1,22 +1,19 @@
-#
-#
-#
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
 
-# open initial terminal on login, change to repos if available
-if [ -d /home/$LOGNAME/dev/atpsa ]; then
-    WORKDIR=--working-directory="/home/$LOGNAME/dev/atpsa"
-else
-    WORKDIR=""
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+
+if [ -n "$BASH_VERSION" ]; then
+   # include .bashrc if it exists
+   if [ -f "$HOME/.bashrc" ]; then
+      . "$HOME/.bashrc"
+   fi
 fi
-
-#/usr/bin/gnome-terminal --window-with-profile=Code $WORKDIR --geometry="+80+80"
-
-if [ -d /home/$LOGNAME/dev/atpsaII ]; then
-    WORKDIR=--working-directory="/home/$LOGNAME/dev/atpsaII"
-else 
-    WORKDIR=""
-fi
-
-#/usr/bin/gnome-terminal --window-with-profile=Code $WORKDIR --geometry="+160+160"
 
 # end file
