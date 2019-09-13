@@ -42,6 +42,14 @@ if [ -e .emacs.d ] || [ -L .emacs.d ]; then
 fi
 /bin/ln -s $DOT_ROOT/emacs.d .emacs.d
 
+
+# docs
+if [ -e docs ] || [ -L docs ]; then
+    /bin/mv docs docs.$TSTAMP
+    /usr/bin/diff -r -x auto-save-list $DOT_ROOT/docs docs.$TSTAMP
+fi
+/bin/ln -s $DOT_ROOT/docs docs
+
 cd $DOT_ROOT
 
 # end file
