@@ -1,0 +1,10 @@
+To popup a user message/notification on gnome
+
+> notify-send "Hello, user2"
+
+
+Relateted:
+
+wall - requires root, didn't seem to work for me
+
+xmessage - has problems with hi-res displays

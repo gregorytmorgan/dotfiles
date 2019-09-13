@@ -1,0 +1,142 @@
+Minimal git cheatsheet
+
+
+Create a repo
+===============================
+> git init
+
+Cheakout a remote repo
+===============================
+> git clone git@somerepo.com ... there are a number of ways to do this base on the protocol and auth used
+
+Create branch
+===============================
+> git branch mybranch
+
+Change to a branch
+===============================
+> git checkout mybranch
+
+Set the upstream link of a banch
+===============================
+> git checkout mybranch
+> git banch -u [upstream branch], e.g. "git branch -u master"
+
+Stash some work
+===============================
+> git stash save "mywork"
+
+View the stash
+===============================
+> git stash list
+
+Retrieve stashed work
+===============================
+> git stash pop
+
+or
+
+> git stash apply stash@{0} ... see "git stash list"
+
+Show the current modified files etc
+===============================
+> git status
+
+Show the branch you're on and it's upstream link
+===============================
+> git branch -vv
+
+Show the current uncommitted/unstaged changes
+===============================
+> git diff
+
+Show the current uncommitted/staged (to be commited) changes
+===============================
+> git diff --cached
+
+or 
+
+> git diff --staged (this is simply an alias)
+
+
+Diff/Merge via GUI
+===============================
+> git difftool
+
+or 
+
+> git difftool --cached
+
+Generally difftool takes the same arg as diff
+
+
+Cleaning up work before pushing (interactive rebase)
+===============================
+> git rebase -i
+
+This will allow squashing of multiple comments, delete/removal of commits, edit of messages, etc ... Standard warnings about rebasing apply.
+
+Commiting work
+===============================
+> git add myfile1
+> git add myfile2
+> git add myfile3
+> git commit (a text editor will typically appear where you can enter a commit message)
+
+or if you'd like to commit a small number of changed files
+
+> git commit myfile1 myfile2 -m "my commit message"
+
+Pushing work upstream
+===============================
+From the working branch
+> git merge upstreambranch
+
+Resolve an issues.
+
+> git push upstreambranch
+
+View commits
+===============================
+> git log 
+
+or with more commit detail
+
+> git log -p
+
+or 
+
+> git log --pretty=oneline ... good for search for a hash
+
+Who changed what in a file
+===============================
+> git blame myfile
+
+Revert changes to a file
+===============================
+> git checkout myfile
+
+Find instances of a string
+===============================
+> git grep helloWorld
+
+Show the details of a specific commit
+===============================
+> git show [hash] e.g. "git show c341f489fd691c20e8cf8e97a7206fd44f3b4efb" or "git show c341f4"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

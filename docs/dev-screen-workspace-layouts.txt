@@ -1,0 +1,24 @@
+
+
+Dev Screen/Workpace Layout - Single Display
+===============================
+
+#1 Upper left   Terms
+#2 Upper right  Scratch + remote terms 
+#3 Lower left   Brower/browser debug
+#4 Lower right  Editor
+
+                 |
+                 |
+    Terms x 3    |  Scratch + remotes
+                 |
+                 |
+  ---------------+---------------
+                 |
+                 |
+    Browser      |  Editor 
+                 |
+                 |
+
+
+

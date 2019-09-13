@@ -1,0 +1,8 @@
+Compress
+========
+tar -cvzf site1.tgz site1
+
+Extract
+========
+tar -xvzf site1.tgz
+

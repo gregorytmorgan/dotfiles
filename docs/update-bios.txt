@@ -1,0 +1,19 @@
+
+
+Method #2
+===============================
+
+From a terminal:
+
+> fwupdmgr update
+
+
+Method #2
+===============================
+
+1. Download the update bios file (*.exe) from the Dell support site.
+2. Save it to /boot/efi
+3. Reboot the machine
+4. Push F12
+5. Choose Bios upgrade.
+

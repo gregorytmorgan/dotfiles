@@ -1,0 +1,156 @@
+
+> sudo dmidecode -s bios-version
+2.2.1
+
+> sudo dmidecode | less
+
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 3.0.0 present.
+Table at 0x000E0000.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: Dell Inc.
+	Version: 2.2.1
+	Release Date: 08/18/2017
+	Address: 0xF0000
+	Runtime Size: 64 kB
+	ROM Size: 16384 kB
+    ...
+
+System Information
+	Manufacturer: Dell Inc.
+	Product Name: XPS 13 9360
+	Version: Not Specified
+	Serial Number: 8Y3FQF2
+	UUID: 4C4C4544-0059-3310-8046-B8C04F514632
+	Wake-up Type: Power Switch
+	SKU Number: 075B
+	Family: XPS
+    ...
+
+Cache Information
+        Socket Designation: L1 Cache
+        Configuration: Enabled, Not Socketed, Level 1
+        Operational Mode: Write Back
+        Location: Internal
+        Installed Size: 128 kB
+        Maximum Size: 128 kB
+        Supported SRAM Types:
+                Synchronous
+        Installed SRAM Type: Synchronous
+        Speed: Unknown
+        Error Correction Type: Parity
+        System Type: Unified
+        Associativity: 8-way Set-associative
+
+Cache Information
+        Socket Designation: L2 Cache
+        Configuration: Enabled, Not Socketed, Level 2
+        Operational Mode: Write Back
+        Location: Internal
+        Installed Size: 512 kB
+        Maximum Size: 512 kB
+        Supported SRAM Types:
+                Synchronous
+        Installed SRAM Type: Synchronous
+        Speed: Unknown
+        Error Correction Type: Single-bit ECC
+        System Type: Unified
+        Associativity: 4-way Set-associative
+
+Cache Information
+        Socket Designation: L3 Cache
+        Configuration: Enabled, Not Socketed, Level 3
+        Operational Mode: Write Back
+        Location: Internal
+        Installed Size: 4096 kB
+        Maximum Size: 4096 kB
+        Supported SRAM Types:
+                Synchronous
+        Installed SRAM Type: Synchronous
+        Speed: Unknown
+        Error Correction Type: Multi-bit ECC
+        System Type: Unified
+        Associativity: 16-way Set-associative
+
+Processor Information
+        Socket Designation: U3E1
+        Type: Central Processor
+        Family: Core i7
+        Manufacturer: Intel(R) Corporation
+        ID: E9 06 08 00 FF FB EB BF
+        Signature: Type 0, Family 6, Model 142, Stepping 9
+        Flags:
+                FPU (Floating-point unit on-chip)
+                VME (Virtual mode extension)
+                DE (Debugging extension)
+                PSE (Page size extension)
+                TSC (Time stamp counter)
+                MSR (Model specific registers)
+                PAE (Physical address extension)
+                MCE (Machine check exception)
+                CX8 (CMPXCHG8 instruction supported)
+                APIC (On-chip APIC hardware supported)
+                SEP (Fast system call)
+                MTRR (Memory type range registers)
+                PGE (Page global enable)
+                MCA (Machine check architecture)
+                CMOV (Conditional move instruction supported)
+                PAT (Page attribute table)
+                PSE-36 (36-bit page size extension)
+                CLFSH (CLFLUSH instruction supported)
+                DS (Debug store)
+                ACPI (ACPI supported)
+                MMX (MMX technology supported)
+                FXSR (FXSAVE and FXSTOR instructions supported)
+                SSE (Streaming SIMD extensions)
+                SSE2 (Streaming SIMD extensions 2)
+                SS (Self-snoop)
+                HTT (Multi-threading)
+                TM (Thermal monitor supported)
+                PBE (Pending break enabled)
+        Version: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+        Voltage: 0.8 V
+        External Clock: 100 MHz
+        Max Speed: 2700 MHz
+        Current Speed: 2600 MHz
+        Status: Populated, Enabled
+        Upgrade: Other
+        L1 Cache Handle: 0x003C
+        L2 Cache Handle: 0x003D
+        L3 Cache Handle: 0x003E
+        Serial Number: To Be Filled By O.E.M.
+        Asset Tag: To Be Filled By O.E.M.
+        Part Number: To Be Filled By O.E.M.
+        Core Count: 2
+        Core Enabled: 2
+        Thread Count: 4
+        Characteristics:
+                64-bit capable
+                Multi-Core
+                Hardware Thread
+                Execute Protection
+                Enhanced Virtualization
+                Power/Performance Control
+
+Portable Battery
+        Location: Sys. Battery Bay
+        Manufacturer: LG
+        Manufacture Date: 10/24/2016
+        Serial Number: CAEB
+        Name: DELL RNP726B
+        Design Capacity: 59990 mWh
+        Design Voltage: 7600 mV
+        SBDS Version: 1.0
+        Maximum Error: 8%
+        SBDS Chemistry: LION
+        OEM-specific Information: 0x00000801
+
+... and a whole lot more info.
+
+
+
+
+

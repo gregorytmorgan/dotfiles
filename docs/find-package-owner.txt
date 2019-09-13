@@ -1,0 +1,9 @@
+
+
+dpkg -S [filename]
+
+apt-file search [filename]
+
+
+
+
