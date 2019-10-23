@@ -124,6 +124,10 @@ Show the details of a specific commit
 ===============================
 > git show [hash] e.g. "git show c341f489fd691c20e8cf8e97a7206fd44f3b4efb" or "git show c341f4"
 
+Command help
+===============================
+> git help <command>
+
 
 
 
