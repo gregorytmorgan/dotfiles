@@ -38,6 +38,10 @@ or
 
 > git stash apply stash@{0} ... see "git stash list"
 
+... and once the work is applied
+
+> git stash drop stash@{0}
+
 Show the current modified files etc
 ===============================
 > git status
