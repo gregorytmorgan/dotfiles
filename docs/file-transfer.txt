@@ -1,3 +1,14 @@
+Put
+========
+scp src destAddr:destPath
+
+e.g.
+> scp myfile.txt 192.168.1.1:/home/bob/myproject
+
+Alternatively leaving out the dest after colon is equiv to user home dir.
+
+> scp myfile.txt 192.168.1.1:  ==> > scp myfile.txt 192.168.1.1:/home/bob
+
 Compress
 ========
 tar -cvzf site1.tgz site1
