@@ -1,0 +1,89 @@
+#
+#
+#
+
+
+Show process tree
+========
+
+> ps -aef --forest
+
+Output (trimmed):
+
+UID        PID  C STIME   TIME      CMD
+root         1  0 Dec17   00:00:00 /usr/sbin/lightdm
+root      1124  0 Dec17   00:16:30  \_ /usr/lib/xorg/Xorg -core :0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7
+root      1124  0 Dec17   00:00:00  \_ lightdm --session-child 12 19
+gmorgan   1478  0 Dec17   00:00:00      \_ /sbin/upstart --user
+gmorgan   3018  0 Dec17   00:00:00          |   \_ /opt/google/chrome/chrome --type=zygote
+gmorgan   3030  0 Dec17   00:00:00          |   |   \_ /opt/google/chrome/nacl_helper
+gmorgan   3030  0 Dec17   00:00:00          |   |   \_ /opt/google/chrome/chrome --type=zygote
+gmorgan   3035  0 Dec17   00:00:00          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  0 Dec18   00:00:19          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  0 Dec18   00:00:07          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  0 Dec18   00:00:00          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  0 08:42   00:00:04          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  1 09:03   00:00:39          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  0 09:03   00:00:00          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  1 09:34   00:00:02          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3035  0 09:34   00:00:00          |   |       \_ /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm
+gmorgan   3018  0 Dec17   00:15:11          |   \_ /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=930618
+gmorgan   3056  0 Dec17   00:00:00          |   |   \_ /opt/google/chrome/chrome --type=broker
+gmorgan   3018  0 Dec17   00:01:45          |   \_ /opt/google/chrome/chrome --type=utility --field-trial-handle=930618
+...
+
+To see a specific process group:
+========
+
+> ps --forest -f -g $(ps -o sid= -p 3030)
+
+   PID  TT       STAT TIME     CMD
+   9043 ?        S    00:00:00 /bin/bash /home/gmorgan/netbeans-8.2/platform/lib/nbexec --cachedir /home/g
+   9297 ?        Sl   00:10:37  \_ /home/gmorgan/netbeans-8.2/bin/jre/bin/java -classpath /home/gm
+   3018 ?        SLl  00:07:50 /opt/google/chrome/chrome
+   3024 ?        S    00:00:00  \_ cat
+   3025 ?        S    00:00:00  \_ cat
+   3030 ?        S    00:00:00  \_ /opt/google/chrome/chrome --type=zygote
+   3032 ?        S    00:00:00  |   \_ /opt/google/chrome/nacl_helper
+   3035 ?        S    00:00:00  |   \_ /opt/google/chrome/chrome --type=zygote
+   3174 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+  12087 ?        Sl   00:00:21  |       \_ /opt/google/chrome/chrome --type=renderer
+  14479 ?        Sl   00:00:07  |       \_ /opt/google/chrome/chrome --type=renderer
+  14503 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+  23728 ?        Sl   00:00:05  |       \_ /opt/google/chrome/chrome --type=renderer
+  24403 ?        Sl   00:00:45  |       \_ /opt/google/chrome/chrome --type=renderer
+  24422 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+  25808 ?        Sl   00:00:13  |       \_ /opt/google/chrome/chrome --type=renderer
+  25828 ?        Sl   00:00:17  |       \_ /opt/google/chrome/chrome --type=renderer
+  27233 ?        Sl   00:00:01  |       \_ /opt/google/chrome/chrome --type=renderer
+  27251 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+   3056 ?        Sl   00:15:30  \_ /opt/google/chrome/chrome --type=gpu-process
+   3068 ?        S    00:00:00  |   \_ /opt/google/chrome/chrome --type=broker
+   3059 ?        SLl  00:01:50  \_ /opt/google/chrome/chrome --type=utility
+   2370 ?        Ssl  00:12:43 compiz
+
+...The above will show other processes in the same session.  If you can 'pick'
+the process lines you're interested in:
+
+> ps --forest -o pid,tty,stat,time,cmd -g $(ps -o sid= -p 3030) --cols  $(tput cols) | grep chrome
+
+  3018 ?        SLl  00:07:52 /opt/google/chrome/chrome
+  3030 ?        S    00:00:00  \_ /opt/google/chrome/chrome --type=zygote
+  3032 ?        S    00:00:00  |   \_ /opt/google/chrome/nacl_helper
+  3035 ?        S    00:00:00  |   \_ /opt/google/chrome/chrome --type=zygote
+  3174 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+ 12087 ?        Sl   00:00:21  |       \_ /opt/google/chrome/chrome --type=renderer
+ 14479 ?        Sl   00:00:07  |       \_ /opt/google/chrome/chrome --type=renderer
+ 14503 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+ 23728 ?        Sl   00:00:05  |       \_ /opt/google/chrome/chrome --type=renderer
+ 24403 ?        Sl   00:00:45  |       \_ /opt/google/chrome/chrome --type=renderer
+ 24422 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+ 25808 ?        Sl   00:00:13  |       \_ /opt/google/chrome/chrome --type=renderer
+ 25828 ?        Sl   00:00:17  |       \_ /opt/google/chrome/chrome --type=renderer
+ 27233 ?        Sl   00:00:01  |       \_ /opt/google/chrome/chrome --type=renderer
+ 27251 ?        Sl   00:00:00  |       \_ /opt/google/chrome/chrome --type=renderer
+  3056 ?        Sl   00:15:30  \_ /opt/google/chrome/chrome --type=gpu-process
+  3068 ?        S    00:00:00  |   \_ /opt/google/chrome/chrome --type=broker
+  3059 ?        SLl  00:01:50  \_ /opt/google/chrome/chrome --type=utility
+
+Note the two 'cat' processes that are chrome children are missing.
