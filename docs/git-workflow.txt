@@ -1,6 +1,12 @@
 Minimal git cheatsheet
 
 
+Setup git to use the merge tool of choice
+===============================
+git config --global merge.tool kdiff3
+
+Popular choices are meld and kdiff3
+
 Create a repo
 ===============================
 > git init
