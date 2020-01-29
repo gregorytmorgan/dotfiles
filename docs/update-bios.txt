@@ -1,7 +1,9 @@
 
-
-Method #2
+Dell laptop running Ubuntu
 ===============================
+
+Method #1
+-------------------------------
 
 From a terminal:
 
@@ -9,7 +11,7 @@ From a terminal:
 
 
 Method #2
-===============================
+-------------------------------
 
 1. Download the update bios file (*.exe) from the Dell support site.
 2. Save it to /boot/efi
