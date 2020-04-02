@@ -1,6 +1,16 @@
 Minimal git cheatsheet
 
 
+View current config settings
+===============================
+git config --list
+
+Set config settings
+===============================
+git config --global user.email me@nowhere.com
+
+git config --global core.editor emacs
+
 Setup git to use the merge tool of choice
 ===============================
 git config --global merge.tool kdiff3
@@ -52,7 +62,7 @@ Show the current modified files etc
 ===============================
 > git status
 
-Show the branch you're on and it's upstream link
+Show branches and upstream links
 ===============================
 > git branch -vv
 
@@ -80,11 +90,15 @@ or
 Generally difftool takes the same arg as diff
 
 
-Cleaning up work before pushing (interactive rebase)
+Cleaning up work before pushing upstream (interactive rebase)
 ===============================
 > git rebase -i
 
-This will allow squashing of multiple comments, delete/removal of commits, edit of messages, etc ... Standard warnings about rebasing apply.
+Cleaning up work when there isn't an upstream
+===============================
+> git rebase -i HEAD~7
+
+This will allow squashing of multiple comments, delete/removal of commits, edit of messages, etc ... standard warnings about rebasing apply.
 
 Commiting work
 ===============================
@@ -102,7 +116,7 @@ Pushing work upstream
 From the working branch
 > git merge upstreambranch
 
-Resolve an issues.
+Resolve any issues.
 
 > git push upstreambranch
 
@@ -136,10 +150,11 @@ Show the details of a specific commit
 
 Command help
 ===============================
-> git help <command>
+> git <command> -h
 
+or
 
-
+> git help <command>, basically just pulls up the man page
 
 
 
