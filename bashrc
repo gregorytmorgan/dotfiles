@@ -117,14 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ]; then
-    PATH=$HOME/bin:$PATH
-fi
-
-# set PATH so it includes user's private scripts if it exists
-if [ -d "$HOME/scripts" ]; then
-    PATH=$HOME/scripts:$PATH
-fi
+# this is now done in profile
 
 # add current dirctory to path, NOT A BEST PRACTICE FOR SECURITY 
 #PATH=.:$PATH
