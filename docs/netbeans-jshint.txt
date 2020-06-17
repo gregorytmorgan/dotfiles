@@ -1,0 +1,19 @@
+
+Linting with Netbeans 8.x
+========
+
+See http://plugins.netbeans.org/plugin/58580/jshint
+
+For Netbeans v8.2 jshint plugin (v2.9.4) is available, though it doesn't seem to respect inline
+configs e.g. /*jshint ... or a .jshintrc file, but relies on the option config dialog for the
+plugin.  Strangely it does respect inline def of globals? though it seems to use a jslint/eslint style
+def e.g. 'global' instead of jshints 'globals'.
+
+In the past I believe I've seen Netbeans read .jshintrc correctly?
+
+Does presence of .jshintrc enable/disable checking?
+
+jshint node: true required for 'use strict;'
+
+Using Netbeans v8.2 I was able to manually download and install Netbeans 11 jshint plugin v1.3. This
+is useful in that it uses jshint 2.10.1, which has usable improvements.
