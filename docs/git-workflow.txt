@@ -5,11 +5,19 @@ View current config settings
 ===============================
 git config --list
 
+<<<<<<< HEAD
 Set config settings
 ===============================
 git config --global user.email me@nowhere.com
 
 git config --global core.editor emacs
+=======
+Set global config settings
+===============================
+git config --global user.email nobody@nowhere.com
+
+git config --global user.name "nobody"
+>>>>>>> Update git settings to use anon email
 
 Setup git to use the merge tool of choice
 ===============================
